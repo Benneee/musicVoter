@@ -1,20 +1,73 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
+<div id="content">
+  <div id="header">
+    <app-header></app-header>
+  </div>
+  <div class="cont">
+    <div class="container">
+
+      <!-- Creating a form element -->
+      <form (ngSubmit) = "addSong(f)" #f = "ngForm" >
+        <div id="div0"><h3 class="header text-primary">Add a Song</h3></div>
+        <div id="div1">
+          <div class="form-group">
+
+            <!-- #newname and #newtitle binds the name and title properties to the function addSong() -->
+
+            <label class="text-primary" for="artisteName">Name</label><br>
+            <input 
+            class="form-control" 
+            placeholder="Add Artiste's name" 
+            ngModel name="artisteName" 
+            #newname> 
+          </div> 
+
+          <div class="form-group">
+            <label class="text-primary" for="title">Title</label><br>
+            <input 
+            class="form-control" 
+            placeholder="Add Song Title" 
+            ngModel name="title" 
+            #newtitle>
+          </div>
+
+          <!-- The submit button is hooked up with the addSong() to add a song to the list of songs -->
+          <div class="buttn">
+            <button class="btn btn-primary">Submit
+          </button>
+          </div>
+          <div class="buttn2">            
+          <button class="btn btn-success" (click)="onSave()">Save Songs</button>
+        </div>
+        <div class="buttn3">            
+            <button class="btn btn-warning" (click)="onGet()">Get Songs</button>
+          </div>
+      </div>
+    </form>
+    <div id="voter">
+
+      <!-- The selector for the voter component -->
+      <!-- The NgFor directive loops through the list of songs -->
+
+      <app-voter
+      *ngFor = "let foobar of sortedSongs()"
+      [songs] = "foobar">  
+    </app-voter>
+    <!-- a style directive to change the background color of the page on clicking the button -->
+    <!-- <button (click)="changePageColor()" appColorChange >ChangeColor</button> -->
+  </div>
+</div>
+</div>
+<div>
+  <!-- <app-box1></app-box1> -->
+</div>
+  <app-footer></app-footer>
+</div>
+</html>

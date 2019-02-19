@@ -1,0 +1,32 @@
+<div class="container main-normal">
+	<div class="row">
+		<div id="votes" class="col-4">
+			<div class="header text-center">
+				Points
+			</div>
+			<div class="header"  id="poi">
+				{{ songs.votes }}
+			</div>
+		</div>
+		<div>
+			<div class="col-8 header">{{ songs.name }}</div>
+			<br>
+			<div class="col-8">{{ songs.title }}</div>
+		</div>
+		<div class="display">
+			<button>
+				<a href (click) = "voteUp()">
+					<span class="glyphicon glyphicon-circle-arrow-up">
+					</span> upvote	
+				</a>
+			</button>
+				&nbsp;
+			<button>
+				<a href (click) = "voteDown()">
+					<span class="glyphicon glyphicon-arrow-down">
+					</span> downvote	
+				</a>
+			</button>
+		</div>
+	</div>
+</div>

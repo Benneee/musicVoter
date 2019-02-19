@@ -1,0 +1,15 @@
+#votes{
+	background-color: #2233EE;
+	color: white;
+	margin: 3px;
+	padding: 3px;
+}
+
+#poi{
+	text-align: center;
+	font-weight: bolder;
+}
+
+.display {
+	display: inline-block;
+}
