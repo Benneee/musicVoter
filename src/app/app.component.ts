@@ -4,6 +4,7 @@ import { ColorDirective } from './musicVoterColor/colorChange.directive';
 import { SongDataService } from './songData.service';
 import { Response } from '@angular/Http';
 import { NgForm } from '@angular/forms';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Component({
   selector: 'app-root',
@@ -56,9 +57,20 @@ export class AppComponent {
 		this.songDataService.getSongs(this.songs).subscribe(
 			(res: Response) => {
 				const data = res.json();
-				console.log(data);
-			}
-		);
+				if (data) {
+					for(const y in data) {
+						for (const z in data[y]){
+							console.log('looped', data[y][z]);	
+								this.songs.push(new Song(
+									data[y][z].name,
+									data[y][z].title,
+									data[y][z].votes
+								))
+							}
+						}
+					}
+				}
+			);
 		return false;
 	}
 
