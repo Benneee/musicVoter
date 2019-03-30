@@ -11,6 +11,8 @@ import { Box1Component } from './box1/box1.component';
 import { CustomThemeService } from './Services/customtheme.service';
 import { SongDataService } from './songData.service';
 import { HttpModule } from '@angular/http';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpModule } from '@angular/http';
     ColorDirective,
     ThemeDirective,
     FooterComponent,
-    Box1Component
+    Box1Component,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
