@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: "app-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onSignup(form: NgForm) {
+    const email = form.value.email;
+    const password = form.value.password;
+
+    console.log("form credentials: ", { email, password });
   }
-
 }
