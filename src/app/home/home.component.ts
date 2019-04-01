@@ -1,16 +1,15 @@
-import { Component, Input } from "@angular/core";
-import { Song } from "./votes.model";
-import { ColorDirective } from "./musicVoterColor/colorChange.directive";
-import { SongDataService } from "./songData.service";
+import { Component, OnInit } from "@angular/core";
+import { Song } from "../votes.model";
+import { SongDataService } from "../songData.service";
 import { Response } from "@angular/Http";
 import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"]
 })
-export class AppComponent {
+export class HomeComponent {
   constructor(private songDataService: SongDataService) {
     this.songs = [];
 
@@ -64,11 +63,4 @@ export class AppComponent {
     });
     return false;
   }
-
-  // This function is linked to the button on the .html page to change the page color
-  // changePageColor() {
-  // 	const arrX = ['blue', 'green', 'purple', 'grey']
-  // 	this.pageColor = arrX [Math.floor(Math.random() * (arrX.length-1))]
-  // 	console.log('color changed');
-  // }
 }

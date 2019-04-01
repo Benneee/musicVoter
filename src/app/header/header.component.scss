@@ -1,8 +1,13 @@
+.nav-item {
+  margin: 0px 5px 0px 5px;
+}
 
+a.nav-item {
+  text-decoration: none;
+}
 
-nav {
-	font-weight: bolder;
-	font-kerning: auto;
-	font-style: all;
-	font: bodoni-mt, comic-sans;
+* {
+  font-family: "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  color: white;
 }

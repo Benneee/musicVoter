@@ -1,73 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
 <div id="content">
   <div id="header">
     <app-header></app-header>
   </div>
   <div class="cont">
-    <div class="container">
-
-      <!-- Creating a form element -->
-      <form (ngSubmit) = "addSong(f)" #f = "ngForm" >
-        <div id="div0"><h3 class="header text-primary">Add a Song</h3></div>
-        <div id="div1">
-          <div class="form-group">
-
-            <!-- #newname and #newtitle binds the name and title properties to the function addSong() -->
-
-            <label class="text-primary" for="artisteName">Name</label><br>
-            <input 
-            class="form-control" 
-            placeholder="Add Artiste's name" 
-            ngModel name="artisteName" 
-            #newname> 
-          </div> 
-
-          <div class="form-group">
-            <label class="text-primary" for="title">Title</label><br>
-            <input 
-            class="form-control" 
-            placeholder="Add Song Title" 
-            ngModel name="title" 
-            #newtitle>
-          </div>
-
-          <!-- The submit button is hooked up with the addSong() to add a song to the list of songs -->
-          <div class="buttn">
-            <button class="btn btn-primary">Submit
-          </button>
-          </div>
-          <div class="buttn2">            
-          <button class="btn btn-success" (click)="onSave()">Save Songs</button>
-        </div>
-        <div class="buttn3">            
-            <button class="btn btn-warning" (click)="onGet()">Get Songs</button>
-          </div>
-      </div>
-    </form>
-    <div id="voter">
-
-      <!-- The selector for the voter component -->
-      <!-- The NgFor directive loops through the list of songs -->
-
-      <app-voter
-      *ngFor = "let foobar of sortedSongs()"
-      [songs] = "foobar">  
-    </app-voter>
-    <!-- a style directive to change the background color of the page on clicking the button -->
-    <!-- <button (click)="changePageColor()" appColorChange >ChangeColor</button> -->
+    <router-outlet></router-outlet>
   </div>
 </div>
-</div>
-<div>
-  <!-- <app-box1></app-box1> -->
-</div>
-  <app-footer></app-footer>
-</div>
-</html>
