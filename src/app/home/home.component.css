@@ -1,0 +1,38 @@
+/* The box element for the form is created by these style attributes */
+#div0,
+#div1 {
+  max-width: 500px;
+  padding: 15px;
+  border: 2px solid aqua;
+  border-top-style: groove;
+  margin: auto;
+}
+
+#voter {
+  max-width: 500px;
+  padding: 15px;
+  border: 2px solid aqua;
+  border-top-style: groove;
+  margin: auto;
+}
+
+.container {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*This style attribute is triggered when the mouse hovers on the button*/
+.buttn,
+.buttn2,
+.buttn3 {
+  cursor: pointer;
+  margin: auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.buttn2,
+.buttn3 {
+  padding-left: 20px;
+}
