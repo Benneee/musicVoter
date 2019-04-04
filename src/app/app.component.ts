@@ -1,20 +1,28 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Song } from "./votes.model";
 import { ColorDirective } from "./musicVoterColor/colorChange.directive";
 import { SongDataService } from "./songData.service";
 import { Response } from "@angular/Http";
 import { NgForm } from "@angular/forms";
+import * as firebase from "firebase";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private songDataService: SongDataService) {
     this.songs = [];
 
     this.pageColor = "pink";
+  }
+
+  ngOnInit() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyCkjfzIp-CyCa7s5V1q-35hBijZjT9qdUw",
+      authDomain: "musicvoter-3bafe.firebaseapp.com"
+    });
   }
 
   songs: Song[]; // This simply assigns the type "array" to the Song class from the Votes model
