@@ -16,6 +16,7 @@ import { SignupComponent } from "./auth/signup/signup.component";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { AuthService } from "./auth/auth.service";
+import { AuthGuardService } from "./auth/auth-guard.service";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -43,7 +44,12 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CustomThemeService, SongDataService, AuthService],
+  providers: [
+    CustomThemeService,
+    SongDataService,
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

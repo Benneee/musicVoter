@@ -3,6 +3,7 @@ import { Song } from "../votes.model";
 import { SongDataService } from "../songData.service";
 import { Response } from "@angular/Http";
 import { NgForm } from "@angular/forms";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: "app-home",
@@ -10,7 +11,10 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent {
-  constructor(private songDataService: SongDataService) {
+  constructor(
+    private songDataService: SongDataService,
+    private authService: AuthService
+  ) {
     this.songs = [];
 
     this.pageColor = "pink";

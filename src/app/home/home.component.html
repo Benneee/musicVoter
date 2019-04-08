@@ -28,16 +28,27 @@
           #newtitle
         />
       </div>
-
       <!-- The submit button is hooked up with the addSong() to add a song to the list of songs -->
       <div class="buttn">
         <button class="btn btn-primary">Submit</button>
       </div>
       <div class="buttn2">
-        <button class="btn btn-success" (click)="onSave()">Save Songs</button>
+        <button
+          class="btn btn-success"
+          *ngIf="authService.isAuthenticated()"
+          (click)="onSave()"
+        >
+          Save Songs
+        </button>
       </div>
       <div class="buttn3">
-        <button class="btn btn-warning" (click)="onGet()">Get Songs</button>
+        <button
+          class="btn btn-warning"
+          *ngIf="authService.isAuthenticated()"
+          (click)="onGet()"
+        >
+          Get Songs
+        </button>
       </div>
     </div>
   </form>
